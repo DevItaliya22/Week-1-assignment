@@ -10,6 +10,7 @@ function reverse(str)
   let ans=""
   for(let i=str.length-1;i>=0;i--)
   {
+    if(!(str[i]!==' '||str[i]!==','||str[i]!=='?'||str[i]!=='!'))
       ans+=str[i]
   }
   return ans
@@ -17,7 +18,14 @@ function reverse(str)
 function isPalindrome(str) 
 {
   var str2=reverse(str.toLowerCase());
-  return str===str2
+  var str3=""
+  for(let i=0;i<str.length-1;i++)
+  {
+    if(!(str[i]!==' '||str[i]!==','||str[i]!=='?'||str[i]!=='!'))
+      str3+=str[i]
+  }
+
+  return str3===str2
 }
-console.log(isPalindrome("abbbbba"))
+console.log(isPalindrome("abbbbb  ?? a"))
 //module.exports = isPalindrome;
