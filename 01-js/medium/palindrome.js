@@ -5,9 +5,19 @@
   Once you've implemented the logic, test your code by running
   - `npm run test-palindrome`
 */
-
-function isPalindrome(str) {
-  return true;
+function reverse(str)
+{
+  let ans=""
+  for(let i=str.length-1;i>=0;i--)
+  {
+      ans+=str[i]
+  }
+  return ans
 }
-
-module.exports = isPalindrome;
+function isPalindrome(str) 
+{
+  var str2=reverse(str.toLowerCase());
+  return str===str2
+}
+console.log(isPalindrome("abbbbba"))
+//module.exports = isPalindrome;
