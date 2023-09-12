@@ -7,8 +7,16 @@
   - `npm run test-anagram`
 */
 
-function isAnagram(str1, str2) {
-//saved
+function isAnagram(str1,str2)
+{
+  //split will split the string in array then sort it then again join it using joi("") function to string back
+  if(str1.split('').sort().join("")===str2.split('').sort().join("")){
+    return true;
+  }else{
+    return false;
+  }
 }
-
-module.exports = isAnagram;
+var s="rasp"
+var t="sarpee"
+var ans=isAnagram(s,t)
+console.log(ans)
