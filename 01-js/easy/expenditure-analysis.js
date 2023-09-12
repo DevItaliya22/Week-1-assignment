@@ -23,7 +23,19 @@ function calculateTotalSpentByCategory(transactions)
           spend[t.category]=t.price;
         }
     }
-    return spend
+    
+    let ans=[]//convert obj t array
+    var keys=Object.keys(spend)
+    for(var i=0;i<keys.length;i++)
+    {
+      var category=keys[i];
+      var obj={
+        category:category,
+        amountSpend:spend[category]
+      }
+      ans.push(obj)
+    }
+    return ans
 }
 var transactions=[
   {
