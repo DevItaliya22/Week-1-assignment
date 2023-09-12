@@ -8,8 +8,52 @@
   - `npm run test-expenditure-analysis`
 */
 
-function calculateTotalSpentByCategory(transactions) {
-  return [];
+function calculateTotalSpentByCategory(transactions) 
+{
+    var spend={};//empty object right now but if category of our iterations is
+    // not there then it creates a new key
+    for(let i=0;i<transactions.length;i++)
+    {
+        var t=transactions[i];
+        if(spend[t.category]){//spend[x] means returns value at key x
+          //means category already exist
+          spend[t.category]+=t.price;
+        }
+        else{
+          spend[t.category]=t.price;
+        }
+    }
+    return spend
 }
+var transactions=[
+  {
+    item:"pepsi",
+    category:"Drink",
+    price:20,
+    timestamp:"12-june-2023"
+  },
+  {
+    item:"mirinda",
+    category:"Drink",
+    price:20,
+    timestamp:"12-june-2023"
+  },
+  {
+    item:"samosa",
+    category:"food",
+    price:20,
+    timestamp:"12-june-2023"
+  },
+  {
+    item:"ladoo",
+    category:"food",
+    price:20,
+    timestamp:"12-june-2023"
+  }
 
-module.exports = calculateTotalSpentByCategory;
+]
+console.log(calculateTotalSpentByCategory(transactions));
+
+
+
+//module.exports = calculateTotalSpentByCategory;
